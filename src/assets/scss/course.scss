@@ -1,0 +1,141 @@
+@import '@/assets/scss/colors.scss';
+.content {
+    .content-header { border-bottom: 1px solid #EFEFEF }
+    .footer {
+        padding-bottom: 0;
+        border-top: 1px solid #EFEFEF;
+        gap: 1rem;
+        .add-button, .discard-button {
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+        }
+        .add-button {
+            background: $red;
+            color: $white;
+        }
+        .discard-button {
+            border: 1px solid $red;
+            color: $red;
+        }
+    }
+    .main-content { 
+        .form-title {
+            h5 {
+                font-weight: 600;
+                font-size: 0.75rem;
+                color: $blue;
+                margin-bottom: 0.9rem;
+            
+            }
+        }
+        .content-control .radio-form .radio-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            .radio-button {
+                width : 18px;
+                height : 18px;
+                background: #EFEFEF;              
+                border-radius: 50%;
+                cursor: pointer;
+            }      
+            .radio-input:checked + .radio-button {
+                background: $vrindian !important;
+                box-shadow: 0px 2px 4px rgba(115, 103, 240, 0.4);                    
+            }        
+            .radio-text {
+                margin-left: 0.6rem;
+                cursor: pointer;
+                h5 {
+                    font-weight: 500;
+                    font-size: 0.75rem;
+                    color: $cadet;
+                }
+                p {
+                    font-size: 0.55rem;
+                    font-weight: 400;
+                    color: #797F99;
+                }
+            }
+        }
+        .course-details, .content-category, .content-control {
+            .select-input {
+                position : relative;
+                input {
+                    cursor : pointer
+                }
+                .option {
+                    position: absolute;
+                    top: 4.5rem;
+                    background: $op-white;
+                    border-radius: 6px;
+                    width: 100%;
+                    overflow: hidden;
+                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                    z-index: 3;
+                    p {
+                        padding : 0.7rem;
+                        cursor: pointer;
+                        font-size: 0.75rem;
+                        &:hover {
+                            background: $red;
+                            color : $white;
+                        }
+                    }
+                }
+            }
+            .cap {
+                overflow-x: hidden;
+                .capsule-wrapper {
+                    overflow-x: scroll;
+                    scrollbar-width: none;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .capsule {
+                        padding: 0.3rem 1rem;
+                        background: $vrindian;
+                        color: $white;
+                        font-size: 0.75rem;
+                        width: max-content;
+                        border-radius: 100px;                
+                    }
+                }
+            }
+            .form-group .form-control {
+                display: flex;
+                flex-direction: column;
+                // overflow-x: auto;
+                
+                
+            
+                
+                .form-label {
+                    margin-bottom: 0.25rem;
+                    color: $cadet;
+                    font-size: 0.75rem;
+                    .mark {
+                        color: $red ;
+                    }
+                }
+                .input {
+                    padding: 0.5rem 0.75rem;
+                    border: 1px solid #A6A9BC;
+                    border-radius: 6px;
+                    outline: none;
+                    font-size: 0.75rem;
+                    &::placeholder {
+                        font-size: 0.75rem;
+                    }
+                    &:focus {
+                        outline: 2px solid $cadet;
+                    }
+                }
+                textarea {
+                    height: 113px;
+                    resize: none;
+                }
+            }
+        }
+    }
+}

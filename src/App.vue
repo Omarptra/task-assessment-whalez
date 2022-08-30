@@ -1,30 +1,40 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <div class="main-container">
+        <Sidebar />
+        <div class="content-container">
+            <Header :path="this.$route.name" />
+            <router-view />
+        </div>
+    </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+    import Sidebar from './components/Sidebar.vue';
+    import Header from './components/Header.vue';
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+    export default {
+        components: { Sidebar, Header}
     }
-  }
-}
+</script>
+
+<style lang="scss">
+    @import '@/assets/scss/responsive.scss';
+    @import '@/assets/scss/colors.scss';
+
+    .main-container {
+        display: grid;
+        grid-template-columns: 2fr 8fr;
+        font-family: 'Montserrat';
+        .content-container {
+            background: $op-white;
+            padding: 25px;
+            // overflow-y: scroll;
+            .content {
+                background: $white;
+                padding: 1.5rem;
+                border-radius: 6px;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
 </style>
